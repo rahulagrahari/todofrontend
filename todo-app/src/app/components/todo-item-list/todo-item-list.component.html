@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <form [formGroup]="todoForm" novalidate (ngSubmit)="onSubmit(todoForm.value)" >
+        <div class="row">
+          <div class="col-10">
+            <input type="text" class="form-control" formControlName="item">
+          </div>
+          <div class="col-2 ml-auto text-right">
+            <button type="submit" class="btn btn-primary">
+              <span>Create Task</span>
+            </button>
+          </div>
+        </div>
+      </form>
+      <br>
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="w-75">Task</th>
+              <th class="text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let todoItem of todoItems">
+              <td>{{todoItem.description}}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
